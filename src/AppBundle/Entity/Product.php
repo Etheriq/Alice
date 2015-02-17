@@ -244,6 +244,7 @@ class Product
      */
     public function addCategory(\AppBundle\Entity\Category $categories)
     {
+        $categories->setProduct($this);
         $this->categories[] = $categories;
 
         return $this;

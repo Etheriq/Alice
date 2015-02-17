@@ -1,0 +1,23 @@
+AppBundle\Entity\User:
+    user{1..30}:
+        name: <name()>
+        email: <email()>
+        password: <sha1()>
+        address: <address()>
+        lat: <latitude()>
+        lng: <longitude()>
+        phone: <phoneNumber()>
+        zip: <postcode()>
+        website: <domainName()>
+        ip: <ipv4()>
+        products: 2x @product*
+
+AppBundle\Entity\Product:
+    product{1..20}:
+        title: <words(3, true)>
+        weight: <randomDigit()>
+        color: <colorName()>
+        fragile: <randomElement([true, false])>
+        user (unique): @user*
+        categories: 2x @category*
+        tags: 3x @tag*

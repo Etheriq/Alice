@@ -1,0 +1,9 @@
+AppBundle\Entity\Product:
+    product{1..40}:
+        title: <words(3, true)>
+        weight: <randomDigit()>
+        color: <colorName()>
+        fragile: <randomElement([true, false])>
+        user (unique): @user*
+        categories: @category*
+        tags: 3x @tag*
