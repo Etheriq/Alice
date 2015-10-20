@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductRepository extends EntityRepository
 {
+    public function getAllProductsWithDeps()
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p, u, c, t')
+            ->join('p.user', 'u')
+            ->join('p.categories', 'c')
+            ->join('p.tags', 't')
+            ->getQuery()
+            ->getResult();
+    }
 }

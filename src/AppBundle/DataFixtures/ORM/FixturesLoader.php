@@ -17,6 +17,8 @@ class FixturesLoader extends DataFixtureLoader
 
         if ($env == 'test') {
             return [
+                __DIR__ . '/DataForTests/tag.yml',
+                __DIR__ . '/DataForTests/categories.yml',
                 __DIR__ . '/DataForTests/user.yml',
             ];
         }
@@ -24,7 +26,6 @@ class FixturesLoader extends DataFixtureLoader
         return [
             __DIR__ . '/Data/tag.yml',
             __DIR__ . '/Data/categories.yml',
-//            __DIR__ . '/Data/product.yml',
             __DIR__ . '/Data/user.yml',
         ];
     }

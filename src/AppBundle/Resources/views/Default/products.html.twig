@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>#</td>
+            <th>Owner user</th>
+            <th>Product Title</th>
+            <th>Product Weight</th>
+            <th>Product Color</th>
+            <th>Product Fragile</th>
+            <th>Categories</th>
+            <th>Tags</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ product.user.name }}</td>
+                <td>{{ product.title }}</td>
+                <td>{{ product.weight }}</td>
+                <td>{{ product.color }}</td>
+                <td>
+                    {% if product.fragile %}
+                        Yes
+                    {% else %}
+                        No
+                    {% endif %}
+                </td>
+                <td>
+                    {% for category in product.categories %}
+                        <div>
+                            {{ category.title }}
+                        </div>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for tag in product.tags %}
+                        <div>
+                            {{ tag.title }} ({{ tag.text }})
+                        </div>
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

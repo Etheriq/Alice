@@ -1,4 +1,4 @@
 AppBundle\Entity\Category:
-    category{1..150}:
+    category{1..40}:
         __construct: false
         title: <word()>

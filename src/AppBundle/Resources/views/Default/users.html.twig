@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="text-center">Name</th>
+                <th class="text-center">Email</th>
+                <th class="text-center">Password</th>
+                <th class="text-center">Address</th>
+                <th class="text-center">Latitude</th>
+                <th class="text-center">Longitude</th>
+                <th class="text-center">Phone</th>
+                <th class="text-center">Zip</th>
+                <th class="text-center">Web site</th>
+                <th class="text-center">Ip address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>{{ user.lat }}</td>
+                    <td>{{ user.lng }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.zip }}</td>
+                    <td>{{ user.website }}</td>
+                    <td>{{ user.ip }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
