@@ -16,17 +16,18 @@ class FixturesLoader extends DataFixtureLoader
         $env = $this->container->get('kernel')->getEnvironment();
 
         if ($env == 'test') {
+
             return [
-                __DIR__ . '/DataForTests/tag.yml',
+                __DIR__ . '/DataForTests/tags.yml',
                 __DIR__ . '/DataForTests/categories.yml',
-                __DIR__ . '/DataForTests/user.yml',
+                __DIR__ . '/DataForTests/users.yml',
             ];
         }
 
         return [
-            __DIR__ . '/Data/tag.yml',
+            __DIR__ . '/Data/tags.yml',
             __DIR__ . '/Data/categories.yml',
-            __DIR__ . '/Data/user.yml',
+            __DIR__ . '/Data/users.yml',
         ];
     }
 }
