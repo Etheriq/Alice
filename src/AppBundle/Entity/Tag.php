@@ -119,12 +119,12 @@ class Tag
     /**
      * Add products
      *
-     * @param \AppBundle\Entity\Product $products
+     * @param Product $products
      * @return Tag
      */
-    public function addProduct(\AppBundle\Entity\Product $products)
+    public function addProduct(Product $products)
     {
-        $this->products[] = $products;
+        $this->products->add($products);
 
         return $this;
     }
@@ -132,9 +132,9 @@ class Tag
     /**
      * Remove products
      *
-     * @param \AppBundle\Entity\Product $products
+     * @param Product $products
      */
-    public function removeProduct(\AppBundle\Entity\Product $products)
+    public function removeProduct(Product $products)
     {
         $this->products->removeElement($products);
     }
@@ -142,7 +142,7 @@ class Tag
     /**
      * Get products
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return Collection
      */
     public function getProducts()
     {
