@@ -16,7 +16,7 @@ class ProductRepository extends EntityRepository
     {
         return $this->createQueryBuilder('p')
             ->select('p, u, c, t')
-            ->join('p.user', 'u')
+            ->leftjoin('p.user', 'u')
             ->join('p.categories', 'c')
             ->join('p.tags', 't')
             ->getQuery()
